@@ -1,0 +1,22 @@
+How does this work in LLMs like GPT?
+Character tokenization is useful for learning, but modern LLMs usually use more sophisticated tokenizers, often based on subwords.
+
+For example, a tokenizer might split:
+
+unhappiness
+
+into pieces such as:
+
+un + happiness
+
+The exact split depends on the tokenizer.
+
+Different tokenizers can represent the same text differently. Each token receives an ID, and the model processes those IDs rather than directly processing raw text characters.
+
+A simplified LLM workflow is:
+1. Text: "Hello world"
+2. Tokenization: Split text into tokens.
+3. Encoding: Convert tokens to token IDs.
+4. Model processing: The model processes numerical representations of the IDs.
+5. Decoding: Convert generated token IDs back into text.
+One important detail: token IDs are not the same thing as the character codes used by UTF-8. They are identifiers from a tokenizer's vocabulary.
