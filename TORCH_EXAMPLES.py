@@ -26,3 +26,13 @@ print(f"PyTorch: {time.time() - start_time:.8f} seconds")
 start_time = time.time()
 rand = np.matmul(np_rand1, np_rand2)
 print(f"NumPy:   {time.time() - start_time:.8f} seconds")
+
+
+%%time
+start_time = time.time()
+# matrix operations here
+zeros = torch.zeros(1, 1)
+end_time = time.time()
+
+elapsed_time = end_time - start_time
+print(f"{elapsed_time:.8f}")
